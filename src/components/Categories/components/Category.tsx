@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, BoxProps, Icon, IconName, Text } from '@components';
-import { Pressable, View } from 'react-native';
+import { Pressable, StyleProp, View } from 'react-native';
 
 interface CategoryProps {
   boxProps?: BoxProps;
@@ -8,6 +8,7 @@ interface CategoryProps {
   icon: IconName;
   onPress: () => void;
   isSelected: boolean;
+  style?: StyleProp<any>;
 }
 
 export function Category({
@@ -16,18 +17,22 @@ export function Category({
   icon = 'bellOn',
   onPress,
   isSelected = false,
+  style,
 }: CategoryProps) {
   return (
     <Pressable
       onPress={onPress}
       hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginHorizontal: 18,
-        paddingVertical: 8,
-      }}>
+      style={[
+        {
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginHorizontal: 20,
+          paddingVertical: 8,
+        },
+        style,
+      ]}>
       <Box flexGrow={1} flexShrink={1} {...boxProps} alignItems="center">
         <Box
           borderRadius="s22"
@@ -40,11 +45,12 @@ export function Category({
           shadowColor="grayBlack"
           elevation={isSelected ? 8 : 3}
           alignContent="center"
-          shadowOpacity={0.37}
+          marginHorizontal="s8"
+          shadowOpacity={0.8}
           shadowRadius={7.49}
           shadowOffset={{
             width: 0,
-            height: 12,
+            height: 6,
           }}>
           <View style={{ opacity: isSelected ? 1 : 0.3 }}>
             <Icon name={icon} size={20} />

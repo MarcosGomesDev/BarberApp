@@ -33,7 +33,7 @@ export function Screen({
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <Container backgroundColor={colors.background}>
         <Box
-          paddingHorizontal="s24"
+          paddingHorizontal="s20"
           style={[{ paddingTop: top, paddingBottom: bottom }, style]}
           {...boxProps}>
           <ScreenHeader

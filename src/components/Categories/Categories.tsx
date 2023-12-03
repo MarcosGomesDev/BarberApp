@@ -32,10 +32,14 @@ export function Categories({ categories, onSelectCategory }: CategoriesProps) {
       data={categories}
       keyExtractor={category => category._id}
       horizontal
-      contentContainerStyle={{ paddingRight: 24 }}
+      contentContainerStyle={{ paddingVertical: 8, paddingHorizontal: 0 }}
       showsHorizontalScrollIndicator={false}
-      renderItem={({ item: category }) => (
+      renderItem={({ item: category, index }) => (
         <Category
+          style={{
+            marginLeft: index === 0 && 0,
+            marginRight: index === categories.length - 1 && 0,
+          }}
           label={category.name}
           icon={category.icon}
           onPress={() => handleSelectionCategory(category._id)}

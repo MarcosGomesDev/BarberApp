@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Categories, CategoryProp, Screen } from '@components';
+import { Box, Categories, CategoryProp, Screen, Text } from '@components';
 import { HomeHeader } from './components/HomeHeader';
 
 export function HomeScreen() {
@@ -36,7 +36,7 @@ export function HomeScreen() {
   }
 
   return (
-    <Screen>
+    <Screen scrollable>
       <HomeHeader />
       <Categories
         categories={categories}
@@ -44,6 +44,9 @@ export function HomeScreen() {
           handleSelectCategory(category)
         }
       />
+      <Box backgroundColor="gray0" height={300}>
+        <Text>Teste</Text>
+      </Box>
     </Screen>
   );
 }
