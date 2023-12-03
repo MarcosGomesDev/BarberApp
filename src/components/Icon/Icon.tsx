@@ -38,6 +38,7 @@ import { TrashIcon } from '../../assets/icons/TrashIcon';
 import { UserFillIcon } from '../../assets/icons/userFillIcon';
 import { LockFillIcon } from '../../assets/icons/LockFillIcon';
 import { WarningIcon } from '../../assets/icons/WarningIcon';
+import { PlusIcon } from '../../assets/icons/PlusIcon';
 
 export interface IconBase {
   size?: number;
@@ -105,6 +106,7 @@ const iconRegistry = {
   userFill: UserFillIcon,
   lockFill: LockFillIcon,
   warning: WarningIcon,
+  plus: PlusIcon,
 };
 
 type IconType = typeof iconRegistry;
