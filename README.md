@@ -1,79 +1,57 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Barber App
 
-# Getting Started
+This is a React Native app for barbers manages clients (regular or premium), allowing barbers to record details and schedule services. Premium clients receive benefits, encouraging loyalty. This digital approach optimizes salon management, enhancing the user experience.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+### Setup Environment
 
-## Step 1: Start the Metro Server
+Project created with React Native CLI.[ See official docs](https://reactnative.dev/docs/environment-setup) to set up the environment.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+### Run
 
-To start Metro, run the following command from the _root_ of your React Native project:
+**Install dependencies**
 
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+```
+yarn
 ```
 
-## Step 2: Start your Application
+**Install IOS Pods**
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```
+cd ios && pod install
 ```
 
-### For iOS
+**Run IOS**
 
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
+```
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+**Run Android**
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```
+yarn android
+```
 
-## Step 3: Modifying your App
+**Run Tests**
 
-Now that you have successfully run the app, let's modify it.
+```
+yarn test
+```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+### 🛠 Tech and Libraries
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Navigation](https://reactnavigation.org/): Routing and navigation
+  <!-- - [Axios](https://github.com/axios/axios): Promise based HTTP client -->
+  <!-- - [React Query](https://react-query.tanstack.com/): Fetching, caching, synchronizing and updating server state. -->
+- [shopify/restyle](https://shopify.github.io/restyle/) for theme and build UI
 
-## Congratulations! :tada:
+<!-- ### App Screenshots
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+|                |              Android (Light)               |              Android (Dark)               | IOS (Light)                            | IOS (Dark)                            |
+| :------------: | :----------------------------------------: | :---------------------------------------: | -------------------------------------- | ------------------------------------- |
+| Address Screen | ![](docs/images/android/light_address.png) | ![](docs/images/android/dark_address.png) | ![](docs/images/ios/light_address.png) | ![](docs/images/ios/dark_address.png) |
+| Weather Screen | ![](docs/images/android/light_weather.png) | ![](docs/images/android/dark_weather.png) | ![](docs/images/ios/light_weather.png) | ![](docs/images/ios/dark_weather.png) |
+| Config Screen  | ![](docs/images/android/light_config.png)  | ![](docs/images/android/dark_config.png)  | ![](docs/images/ios/light_config.png)  | ![](docs/images/ios/dark_config.png)  |
+|      Menu      |  ![](docs/images/android/light_menu.png)   |  ![](docs/images/android/dark_menu.png)   | ![](docs/images/ios/light_menu.png)    | ![](docs/images/ios/dark_menu.png)    | -->
