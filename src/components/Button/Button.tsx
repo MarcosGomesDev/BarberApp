@@ -31,10 +31,10 @@ export function Button({
       testID="button"
       disabled={disabled || loading}
       paddingHorizontal="s20"
-      height={60}
+      height={50}
       alignItems="center"
       justifyContent="center"
-      borderRadius="s16"
+      borderRadius="s24"
       {...buttonPreset.container}
       {...touchableOpacityBoxProps}>
       {loading ? (
