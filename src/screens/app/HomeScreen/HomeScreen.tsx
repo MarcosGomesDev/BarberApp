@@ -1,52 +1,66 @@
 import React, { useState } from 'react';
-import { Box, Categories, CategoryProp, Screen, Text } from '@components';
+import { Categories, CategoryProp, Menu, Screen } from '@components';
 import { HomeHeader } from './components/HomeHeader';
+import { ScrollView } from 'react-native';
+import { HomeFooter } from './components/HomeFooter';
 
 export function HomeScreen() {
   const [categories] = useState<CategoryProp[]>([
     {
       _id: '3',
       name: 'Cortes',
-      icon: 'trash',
+      icon: '💇🏻‍♂️',
+      type: 'cortes',
     },
     {
       _id: '4',
       name: 'Serviços',
-      icon: 'bellOn',
+      icon: '✂',
+      type: 'service',
     },
     {
       _id: '5',
       name: 'Freestyle',
-      icon: 'trash',
+      icon: '✍🏻',
+      type: 'other',
     },
     {
       _id: '6',
       name: 'Promoções',
-      icon: 'trash',
+      icon: '🏷',
+      type: 'promotion',
     },
     {
       _id: '7',
       name: 'Produtos Destaque',
-      icon: 'trash',
+      icon: '🎁',
+      type: 'product',
     },
   ]);
 
-  function handleSelectCategory(categoryId: CategoryProp['_id']) {
-    console.log(categoryId);
+  const [selectedCategory, setSelectedCategory] = useState<
+    CategoryProp['type']
+  >(categories[0].type);
+
+  function handleSelectCategory(category: CategoryProp['type']) {
+    setSelectedCategory(category);
   }
 
   return (
-    <Screen scrollable>
+    <Screen flex={1} style={{ paddingBottom: 0 }}>
       <HomeHeader />
-      <Categories
-        categories={categories}
-        onSelectCategory={(category: CategoryProp['_id']) =>
-          handleSelectCategory(category)
-        }
-      />
-      <Box backgroundColor="gray0" height={300}>
-        <Text>Teste</Text>
-      </Box>
+      <ScrollView
+        contentContainerStyle={{ paddingVertical: 8 }}
+        showsVerticalScrollIndicator={false}>
+        <Categories
+          categories={categories}
+          onSelectCategory={(category: CategoryProp['type']) =>
+            handleSelectCategory(category)
+          }
+        />
+        <Menu categoryMenu={selectedCategory} />
+      </ScrollView>
+      <HomeFooter />
     </Screen>
   );
 }
