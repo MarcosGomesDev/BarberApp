@@ -10,3 +10,4 @@ export * from './Text/Text';
 export * from './TextInput/TextInput';
 export * from './Toast/Toast';
 export * from './EmailInput/EmailInput';
+export * from './Categories/Categories';
