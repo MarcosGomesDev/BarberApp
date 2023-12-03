@@ -13,6 +13,7 @@ export interface TextProps extends SRTextProps {
   bold?: boolean;
   italic?: boolean;
   semiBold?: boolean;
+  weight?: '300' | '400' | '600' | '700';
 }
 export function Text({
   children,
@@ -20,6 +21,7 @@ export function Text({
   bold,
   italic,
   semiBold,
+  weight = '400',
   style,
   ...sRTextProps
 }: TextProps) {
@@ -27,7 +29,7 @@ export function Text({
   return (
     <SRText
       color="backgroundContrast"
-      style={[$fontSizes[preset], { fontFamily }, style]}
+      style={[$fontSizes[preset], { fontFamily, fontWeight: weight }, style]}
       {...sRTextProps}>
       {children}
     </SRText>
