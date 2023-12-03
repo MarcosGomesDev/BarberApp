@@ -15,8 +15,9 @@ import {
 
 import { LoginSchema, loginSchema } from './loginSchema';
 import { View } from 'react-native';
+import { AuthScreenProps } from '@routes';
 
-export function LoginScreen({ navigation }: any) {
+export function LoginScreen({ navigation }: AuthScreenProps<'LoginScreen'>) {
   const { showToast } = useToastService();
   const { control, formState, handleSubmit } = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
@@ -80,7 +81,7 @@ export function LoginScreen({ navigation }: any) {
       </Text>
 
       <Button
-        // disabled={!formState.isValid}
+        disabled={!formState.isValid}
         onPress={handleSubmit(submitForm)}
         marginTop="s32"
         title="Entrar"

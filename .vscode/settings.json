@@ -1,0 +1,8 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "cSpell.words": ["MMKV", "Zustand"],
+  "svg.preview.background": "white",
+  "material-icon-theme.saturation": 1
+}
