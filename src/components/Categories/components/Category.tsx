@@ -51,8 +51,8 @@ export function Category({
           </View>
         </Box>
         <Text
-          fontSize={14}
-          fontWeight="600"
+          preset="paragraphMedium"
+          bold
           color="gray1"
           textAlign="center"
           opacity={isSelected ? 1 : 0.3}>
