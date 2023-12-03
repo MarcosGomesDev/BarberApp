@@ -12,11 +12,5 @@ export function useToastService(): Pick<
   ToastService,
   'showToast' | 'hideToast'
 > {
-  // const {showToast, hideToast} = useToastContext();
-  // return {
-  //   showToast,
-  //   hideToast,
-  // };
-
   return useToastServiceZustand();
 }
