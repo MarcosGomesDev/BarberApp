@@ -10,6 +10,7 @@ export const palette = {
   greenSuccessLight: '#D8FFEC',
   redError: '#EA3838',
   redErrorLight: '#FBECEC',
+  transparent: 'transparent',
 
   grayBlack: '#000000',
   gray0: '#231F20',
@@ -58,6 +59,14 @@ export const theme = createTheme({
     s8: 8,
     s12: 12,
     s16: 16,
+    s18: 18,
+    s20: 20,
+    s22: 22,
+    s24: 24,
+    s28: 28,
+    s32: 32,
+    s40: 40,
+    s48: 48,
   },
 
   textVariants: {
