@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, BoxProps, Icon, IconName, Text } from '@components';
+import { Box, BoxProps, Text } from '@components';
 import { Pressable, StyleProp, View } from 'react-native';
 
 interface CategoryProps {
   boxProps?: BoxProps;
   label: string;
-  icon: IconName;
+  icon: string;
   onPress: () => void;
   isSelected: boolean;
   style?: StyleProp<any>;
@@ -14,7 +14,7 @@ interface CategoryProps {
 export function Category({
   boxProps,
   label,
-  icon = 'bellOn',
+  icon = '💇🏻‍♂️',
   onPress,
   isSelected = false,
   style,
@@ -28,7 +28,7 @@ export function Category({
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          marginHorizontal: 20,
+          marginHorizontal: 16,
           paddingVertical: 8,
         },
         style,
@@ -52,8 +52,15 @@ export function Category({
             width: 0,
             height: 6,
           }}>
-          <View style={{ opacity: isSelected ? 1 : 0.3 }}>
-            <Icon name={icon} size={20} />
+          <View
+            style={{
+              opacity: isSelected ? 1 : 0.3,
+              height: '100%',
+              width: '100%',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Text style={{ transform: [{ scale: 1.5 }] }}>{icon}</Text>
           </View>
         </Box>
         <Text

@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { Category } from './components';
 import { FlatList } from 'react-native';
-import { IconName } from '../Icon/Icon';
 
 export interface CategoryProp {
   _id: string;
   name: string;
-  icon: IconName;
+  icon: string;
+  type: 'cortes' | 'service' | 'product' | 'other' | 'promotion';
 }
 
 interface CategoriesProps {
   categories: CategoryProp[];
-  onSelectCategory: (categoryId: CategoryProp['_id']) => void;
+  onSelectCategory: (categoryId: CategoryProp['type']) => void;
 }
 
 export function Categories({ categories, onSelectCategory }: CategoriesProps) {
-  const [selectedCategory, setSelectedCategory] = useState<CategoryProp['_id']>(
-    categories[0]._id,
-  );
+  const [selectedCategory, setSelectedCategory] = useState<
+    CategoryProp['type']
+  >(categories[0].type);
 
-  const handleSelectionCategory = (categoryId: CategoryProp['_id']) => {
+  const handleSelectionCategory = (categoryId: CategoryProp['type']) => {
     if (categoryId === selectedCategory) {
       return;
     }
@@ -42,8 +42,8 @@ export function Categories({ categories, onSelectCategory }: CategoriesProps) {
           }}
           label={category.name}
           icon={category.icon}
-          onPress={() => handleSelectionCategory(category._id)}
-          isSelected={selectedCategory === category._id}
+          onPress={() => handleSelectionCategory(category.type)}
+          isSelected={selectedCategory === category.type}
         />
       )}
     />
