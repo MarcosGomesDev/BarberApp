@@ -8,7 +8,12 @@ export function HomeHeader() {
         <Text preset="paragraphLarge" color="gray1">
           Bem vindo(a) a
         </Text>
-        <Text preset="headingMedium" bold color="grayBlack" mt="s10">
+        <Text
+          preset="headingMedium"
+          bold
+          weight="700"
+          color="grayBlack"
+          mt="s10">
           FAMILIA COSTA
         </Text>
       </Box>
