@@ -11,6 +11,7 @@ export const palette = {
   redError: '#EA3838',
   redErrorLight: '#FBECEC',
   transparent: 'transparent',
+  gold: '#CCAC00',
 
   grayBlack: '#000000',
   gray0: '#231F20',
