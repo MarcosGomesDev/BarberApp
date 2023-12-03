@@ -25,7 +25,7 @@ export function Router() {
 
   return (
     <NavigationContainer>
-      <AuthStack />
+      <AppStack />
     </NavigationContainer>
   );
 }
