@@ -38,7 +38,7 @@ export function Category({
           marginBottom="s8"
           backgroundColor="grayWhite"
           shadowColor="grayBlack"
-          elevation={3}
+          elevation={isSelected ? 8 : 3}
           alignContent="center"
           shadowOpacity={0.37}
           shadowRadius={7.49}
