@@ -11,3 +11,5 @@ export * from './TextInput/TextInput';
 export * from './Toast/Toast';
 export * from './EmailInput/EmailInput';
 export * from './Categories/Categories';
+export * from './Menu/Menu';
+export * from './Dialog/Dialog';
