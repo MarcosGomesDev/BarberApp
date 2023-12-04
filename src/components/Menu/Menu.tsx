@@ -2,17 +2,13 @@ import React from 'react';
 import { FlatList } from 'react-native';
 import { Box } from '../Box/Box';
 import { MenuItem, MenuItemProps } from './components';
-import { CategoryProp } from '../Categories/Categories';
-
-interface MenuProps {
-  categoryMenu: CategoryProp['type'];
-}
+import { useCategory } from '@services';
 
 function SeparateItem() {
   return <Box borderWidth={0.2} borderColor="gray3" />;
 }
 
-export function Menu({ categoryMenu }: MenuProps) {
+export function Menu() {
   const data: MenuItemProps['item'][] = [
     {
       _id: '1',
@@ -72,7 +68,11 @@ export function Menu({ categoryMenu }: MenuProps) {
     },
   ];
 
-  const filteredData = data.filter(item => item.type === categoryMenu);
+  const category = useCategory();
+
+  const filteredData = data.filter(item =>
+    category ? item.type === category.type : item.type,
+  );
 
   return (
     <Box>

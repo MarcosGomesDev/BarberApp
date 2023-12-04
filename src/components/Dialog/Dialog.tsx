@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dimensions, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import { Text } from '../Text/Text';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { useDialog, useDialogService } from '@services';
+import { useNavigation } from '@react-navigation/native';
 
 const width = Dimensions.get('window').width * 0.9;
 const height = Dimensions.get('window').height * 0.25;
 2;
+
 export function Dialog() {
   const dialog = useDialog();
   const { hideDialog } = useDialogService();
+  const navigation = useNavigation();
+
+  const [selecteTypeCustomer, setSelectedTypeCustomer] = useState('');
+
+  function handlePremiumCustomer() {
+    setSelectedTypeCustomer('premium');
+  }
+
+  function handleNormalCustomer() {
+    setSelectedTypeCustomer('normal');
+  }
+
+  function handleSave() {
+    hideDialog();
+    navigation.navigate('AttendanceScreen');
+    setSelectedTypeCustomer('');
+  }
 
   return (
     <Modal
@@ -67,10 +86,19 @@ export function Dialog() {
           justifyContent="space-between"
           alignItems="center"
           width={'100%'}>
-          <Button title="Plano" backgroundColor="gold" width={'48%'} />
-          <Button title="Normal" width={'48%'} />
+          <Button
+            title="Plano"
+            backgroundColor="gold"
+            width={'48%'}
+            onPress={handlePremiumCustomer}
+          />
+          <Button title="Normal" width={'48%'} onPress={handleNormalCustomer} />
         </Box>
-        <Button title="Salvar" disabled />
+        <Button
+          title="Salvar"
+          disabled={!selecteTypeCustomer}
+          onPress={handleSave}
+        />
       </Box>
     </Modal>
   );

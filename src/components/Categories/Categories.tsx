@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Category } from './components';
 import { FlatList } from 'react-native';
-
+import data from '../../screens/app/HomeScreen/categories.json';
+import { useCategoryService } from '@services';
 export interface CategoryProp {
   _id: string;
   name: string;
   icon: string;
-  type: 'cortes' | 'service' | 'product' | 'other' | 'promotion';
+  type: string;
 }
 
-interface CategoriesProps {
-  categories: CategoryProp[];
-  onSelectCategory: (categoryId: CategoryProp['type']) => void;
-}
+export function Categories() {
+  const [categories, setCategories] = useState<CategoryProp[]>([]);
+  const [selectedCategory, setSelectedCategory] =
+    useState<CategoryProp['type']>();
 
-export function Categories({ categories, onSelectCategory }: CategoriesProps) {
-  const [selectedCategory, setSelectedCategory] = useState<
-    CategoryProp['type']
-  >(categories[0].type);
+  const { handleCategory } = useCategoryService();
 
-  const handleSelectionCategory = (categoryId: CategoryProp['type']) => {
-    if (categoryId === selectedCategory) {
+  useEffect(() => {
+    (async () => {
+      setCategories(data);
+      setSelectedCategory(data[0].type);
+      handleCategory(data[0]);
+    })();
+  }, [handleCategory]);
+
+  const handleSelectionCategory = (category: CategoryProp) => {
+    if (category.type === selectedCategory) {
       return;
     }
-    onSelectCategory(categoryId);
-    setSelectedCategory(categoryId);
+
+    handleCategory(category);
+    setSelectedCategory(category.type);
   };
 
   return (
@@ -42,7 +49,7 @@ export function Categories({ categories, onSelectCategory }: CategoriesProps) {
           }}
           label={category.name}
           icon={category.icon}
-          onPress={() => handleSelectionCategory(category.type)}
+          onPress={() => handleSelectionCategory(category)}
           isSelected={selectedCategory === category.type}
         />
       )}

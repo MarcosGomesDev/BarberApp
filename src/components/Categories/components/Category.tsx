@@ -14,7 +14,7 @@ interface CategoryProps {
 export function Category({
   boxProps,
   label,
-  icon = '💇🏻‍♂️',
+  icon,
   onPress,
   isSelected = false,
   style,
