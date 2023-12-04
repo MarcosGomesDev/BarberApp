@@ -39,7 +39,7 @@ import { UserFillIcon } from '../../assets/icons/userFillIcon';
 import { LockFillIcon } from '../../assets/icons/LockFillIcon';
 import { WarningIcon } from '../../assets/icons/WarningIcon';
 import { PlusIcon } from '../../assets/icons/PlusIcon';
-
+import { MinusIcon } from '../../assets/icons/MinusIcon';
 export interface IconBase {
   size?: number;
   color?: string;
@@ -107,6 +107,7 @@ const iconRegistry = {
   lockFill: LockFillIcon,
   warning: WarningIcon,
   plus: PlusIcon,
+  minus: MinusIcon,
 };
 
 type IconType = typeof iconRegistry;
