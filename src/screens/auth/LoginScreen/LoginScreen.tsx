@@ -46,7 +46,7 @@ export function LoginScreen({ navigation }: AuthScreenProps<'LoginScreen'>) {
   return (
     <Screen scrollable>
       <View style={{ width: '100%', alignItems: 'center' }}>
-        <Icon name="logoFill" size={130} color="gray0" />
+        <Icon name="logoFill" size={160} color="gray0" />
       </View>
       <Text
         marginBottom="s8"
