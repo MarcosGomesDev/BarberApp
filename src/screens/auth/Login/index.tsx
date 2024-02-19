@@ -50,7 +50,6 @@ export function LoginScreen() {
         placeholder="Digite seu e-mail"
         boxProps={{ mb: 's24' }}
       />
-
       <FormPasswordInput
         control={control}
         name="password"
@@ -58,9 +57,11 @@ export function LoginScreen() {
         placeholder="Digite sua senha"
         boxProps={{ mb: 's20' }}
       />
-
-      <Button title="Entrar" onPress={handleSubmit(submitForm)} />
-
+      <Button
+        title="Entrar"
+        onPress={handleSubmit(submitForm)}
+        disabled={!formState.isValid}
+      />
       <Button
         onPress={() => {}}
         preset="underline"
