@@ -24,7 +24,7 @@ export const buttonPresets: Record<
     },
     disabled: {
       container: {
-        backgroundColor: 'gray4',
+        backgroundColor: 'gray1',
       },
       content: 'gray2',
     },
