@@ -65,6 +65,7 @@ export function LoginScreen() {
         onPress={() => {}}
         preset="underline"
         marginTop="s12"
+        textPreset="paragraphSmall"
         title="Criar uma conta"
       />
     </Screen>
