@@ -5,6 +5,7 @@ import {
   TouchableOpacityBox,
   TouchableOpacityBoxProps,
   Text,
+  TextVariants,
 } from '@components';
 
 import { buttonPresets } from './buttonPresets';
@@ -16,6 +17,7 @@ export interface ButtonProps extends TouchableOpacityBoxProps {
   loading?: boolean;
   preset?: ButtonPreset;
   disabled?: boolean;
+  textPreset?: TextVariants;
 }
 
 export function Button({
@@ -23,6 +25,7 @@ export function Button({
   loading,
   preset = 'primary',
   disabled,
+  textPreset = 'paragraphLarge',
   ...touchableOpacityBoxProps
 }: ButtonProps) {
   const buttonPreset = buttonPresets[preset][disabled ? 'disabled' : 'default'];
@@ -41,7 +44,7 @@ export function Button({
         <ActivityIndicator color={buttonPreset.content} />
       ) : (
         <Text
-          preset={preset === 'underline' ? 'paragraphSmall' : 'paragraphLarge'}
+          preset={textPreset}
           fontWeight="bold"
           color={buttonPreset.content}>
           {title}
