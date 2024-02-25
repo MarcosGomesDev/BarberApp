@@ -6,6 +6,9 @@ import {
   TouchableOpacityBoxProps,
   Text,
   TextVariants,
+  IconName,
+  Icon,
+  Box,
 } from '@components';
 
 import { buttonPresets } from './buttonPresets';
@@ -18,6 +21,8 @@ export interface ButtonProps extends TouchableOpacityBoxProps {
   preset?: ButtonPreset;
   disabled?: boolean;
   textPreset?: TextVariants;
+  icon?: boolean;
+  iconName?: IconName;
 }
 
 export function Button({
@@ -25,6 +30,8 @@ export function Button({
   loading,
   preset = 'primary',
   disabled,
+  icon = false,
+  iconName = 'arrowLeft',
   textPreset = 'paragraphLarge',
   ...touchableOpacityBoxProps
 }: ButtonProps) {
@@ -43,12 +50,18 @@ export function Button({
       {loading ? (
         <ActivityIndicator color={buttonPreset.content} />
       ) : (
-        <Text
-          preset={textPreset}
-          fontWeight="bold"
-          color={buttonPreset.content}>
-          {title}
-        </Text>
+        <Box flexDirection="row" alignItems="center">
+          <Text
+            preset={textPreset}
+            fontWeight="bold"
+            color={buttonPreset.content}>
+            {title}
+          </Text>
+
+          {icon && (
+            <Icon name={iconName} size={18} color={buttonPreset.content} />
+          )}
+        </Box>
       )}
     </TouchableOpacityBox>
   );

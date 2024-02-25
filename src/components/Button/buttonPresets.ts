@@ -1,4 +1,4 @@
-import { ThemeColors } from '../../theme/theme';
+import { ThemeColors } from '@theme';
 import { TouchableOpacityBoxProps } from '../Box';
 
 import { ButtonPreset } from './index';
@@ -26,7 +26,7 @@ export const buttonPresets: Record<
       container: {
         backgroundColor: 'gray1',
       },
-      content: 'gray2',
+      content: 'ice',
     },
   },
   outline: {
