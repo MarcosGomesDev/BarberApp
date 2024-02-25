@@ -32,9 +32,7 @@ export function getOnlyDay(date: Date): string {
 }
 
 export function getOnlyHour(date: Date): string {
-  const currentDateBrazil = utcToZonedTime(date, 'America/Sao_Paulo');
-
-  return format(currentDateBrazil, 'HH:mm', {
+  return format(date, 'HH:mm', {
     locale: ptBR,
   });
 }
