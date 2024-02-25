@@ -8,30 +8,33 @@ export const palette = {
   carrotSecondaryLight: '#FAE6DD',
   greenSuccess: '#4ABC86',
   greenSuccessLight: '#D8FFEC',
+  lightRed: '#FFD7D7',
   redError: '#EA3838',
   redErrorLight: '#FBECEC',
   gold: '#CCAC00',
   purple: '#8162FF',
+  darkPurple: '#221C3D',
 
+  ice: '#a9a9a9',
   white: '#FFFFFF',
   black: '#000000',
   gray1: '#2C2C2C',
   gray2: '#1A1B1F',
-  gray3: '#B3B3B3',
+  gray3: '#838896',
   gray4: '#E1E1E1',
   gray5: '#F5F5F5',
-  grayWhite: '#141518',
+  background: '#141518',
 };
 
 export const theme = createTheme({
   colors: {
     ...palette,
     primary: palette.gold,
-    primaryContrast: palette.grayWhite,
+    primaryContrast: palette.background,
 
     buttonPrimary: palette.purple,
 
-    background: palette.grayWhite,
+    background: palette.background,
     backgroundContrast: palette.black,
 
     error: palette.redError,
@@ -43,6 +46,7 @@ export const theme = createTheme({
     market: palette.carrotSecondary,
   },
   spacing: {
+    none: 0,
     s4: 4,
     s8: 8,
     s10: 10,
@@ -57,6 +61,7 @@ export const theme = createTheme({
     s56: 56,
   },
   borderRadii: {
+    none: 0,
     s8: 8,
     s12: 12,
     s16: 16,
