@@ -1,6 +1,7 @@
 export * from './ActivityIndicator';
 export * from './Box';
 export * from './Button';
+export * from './CardReservation';
 export * from './Form';
 export * from './Icon';
 export * from './PasswordInput';
