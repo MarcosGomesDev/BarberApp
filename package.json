@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "react-native run-android --deviceId=RQCT600A3PH",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
@@ -15,6 +15,8 @@
     "@react-navigation/native-stack": "^6.9.18",
     "@shopify/restyle": "^2.4.2",
     "babel-plugin-module-resolver": "^5.0.0",
+    "date-fns": "2.30.0",
+    "date-fns-tz": "^2.0.0",
     "react": "18.2.0",
     "react-hook-form": "^7.50.1",
     "react-native": "0.72.3",
