@@ -30,17 +30,18 @@ export function TextInput({
 
   const $textInputContainer: BoxProps = {
     flexDirection: 'row',
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: errorMessage ? 'error' : 'gray1',
-    padding: 's12',
+    padding: 's10',
     borderRadius: 's12',
+    backgroundColor: 'gray2',
   };
 
   function focusInput() {
     inputRef.current?.focus();
   }
   return (
-    <Box flexGrow={1} flexShrink={1} {...boxProps}>
+    <Box flexGrow={1} flexShrink={1} borderRadius="s12" {...boxProps}>
       <Pressable onPress={focusInput}>
         {label && (
           <Box
@@ -66,8 +67,8 @@ export function TextInput({
           <RNTextInput
             autoCapitalize="none"
             ref={inputRef}
-            placeholderTextColor={colors.gray1}
-            style={$textInputStyle}
+            placeholderTextColor={colors.gray3}
+            style={[$textInputStyle]}
             {...rnTextInputProps}
           />
           {RightComponent && (
@@ -86,6 +87,7 @@ export const $textInputStyle: TextStyle = {
   flexGrow: 1,
   flexShrink: 1,
   color: 'white',
+  backgroundColor: 'transparent',
   fontFamily: $fontFamily.regular,
   ...$fontSizes.paragraphMedium,
 };
