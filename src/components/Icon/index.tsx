@@ -27,6 +27,7 @@ import { HeartIcon } from '../../assets/icons/HeartIcon';
 import { HomeFillIcon } from '../../assets/icons/HomeFillIcon';
 import { HomeIcon } from '../../assets/icons/HomeIcon';
 import { LogoFillIcon } from '../../assets/icons/LogoFillIcon';
+import { LogoTextIcon } from '../../assets/icons/LogoTextIcon';
 import { MessageIcon } from '../../assets/icons/MessageIcon';
 import { MessageRoundIcon } from '../../assets/icons/MessageRoundIcon';
 import { NewPostIcon } from '../../assets/icons/NewPostIcon';
@@ -40,6 +41,7 @@ import { LockFillIcon } from '../../assets/icons/LockFillIcon';
 import { WarningIcon } from '../../assets/icons/WarningIcon';
 import { PlusIcon } from '../../assets/icons/PlusIcon';
 import { MinusIcon } from '../../assets/icons/MinusIcon';
+import { MenuIcon } from '../../assets/icons/MenuIcon';
 export interface IconBase {
   size?: number;
   color?: string;
@@ -95,6 +97,8 @@ const iconRegistry = {
   home: HomeIcon,
   homeFill: HomeFillIcon,
   logo: LogoFillIcon,
+  logoText: LogoTextIcon,
+  menu: MenuIcon,
   message: MessageIcon,
   messageRound: MessageRoundIcon,
   newPost: NewPostIcon,
