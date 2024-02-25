@@ -1,10 +1,5 @@
+import { Status } from '@interfaces';
 import { ResponsiveValue } from '@shopify/restyle';
-
-export enum Status {
-  FINISHED = 'Finalizado',
-  CONFIRMED = 'Confirmado',
-  CANCELLED = 'Cancelado',
-}
 
 export function getStatusColor(status: Status):
   | ResponsiveValue<

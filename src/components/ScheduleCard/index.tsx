@@ -4,13 +4,17 @@ import { Text } from '../Text';
 import { Dimensions, Image } from 'react-native';
 import { getCurrentMonthName, getOnlyDay, getOnlyHour } from '@utils';
 import {
-  Status,
   getStatusBackgroundColor,
   getStatusColor,
   translateStatus,
 } from './status';
+import { Reservation } from '@interfaces';
 
-export function CardReservation() {
+interface ScheduleCardProps {
+  data: Reservation;
+}
+
+export function ScheduleCard({ data }: ScheduleCardProps) {
   return (
     <Box
       mt="s20"
@@ -18,10 +22,11 @@ export function CardReservation() {
       borderColor="gray1"
       borderWidth={1}
       flexDirection="row"
-      height={Dimensions.get('window').height / 5.5}
+      height={Dimensions.get('window').height / 7}
       justifyContent="space-between"
       backgroundColor="gray2"
-      padding="s14">
+      paddingHorizontal="s12"
+      paddingVertical="s8">
       <Box
         height={'100%'}
         width={'65%'}
@@ -30,33 +35,34 @@ export function CardReservation() {
         borderRightWidth={1}
         flex={1}>
         <Box
-          backgroundColor={getStatusBackgroundColor(Status['CONFIRMED'])}
+          backgroundColor={getStatusBackgroundColor(data.status)}
           width={95}
-          paddingVertical="s4"
+          height={25}
           borderRadius="s48"
+          justifyContent="center"
           alignItems="center">
           <Text
             preset="paragraphSmall"
             bold
             fontWeight="bold"
-            color={getStatusColor(Status['CONFIRMED'])}>
-            {translateStatus(Status['CONFIRMED'])}
+            color={getStatusColor(data.status)}>
+            {translateStatus(data.status)}
           </Text>
         </Box>
-        <Text preset="headingMedium" bold fontWeight="bold">
-          Corte de Cabelo
+        <Text preset="paragraphLarge" bold fontWeight="bold">
+          {data.service.name}
         </Text>
-        <Box flexDirection="row" alignItems="center">
+        <Box flexDirection="row" alignItems="center" mt="s4">
           <Image
             source={{
               uri: 'https://graces.com.br/wp-content/uploads/2019/02/o-que-nao-pode-faltar-na-sua-barbearia-equipamentos.jpg',
             }}
-            width={30}
-            height={30}
+            width={25}
+            height={25}
             borderRadius={20}
           />
           <Text preset="paragraphSmall" ml="s10">
-            Vintage Barber
+            {data.barbershop.name}
           </Text>
         </Box>
       </Box>
@@ -68,15 +74,9 @@ export function CardReservation() {
           alignItems="center"
           ml="s10"
           paddingHorizontal="s16">
-          <Text preset="paragraphSmall">
-            {getCurrentMonthName(new Date('2024-02-06T09:45:00'))}
-          </Text>
-          <Text preset="headingLarge">
-            {getOnlyDay(new Date('2024-02-06T09:45:00'))}
-          </Text>
-          <Text preset="paragraphSmall">
-            {getOnlyHour(new Date('2024-02-06T09:45:00'))}
-          </Text>
+          <Text preset="paragraphSmall">{getCurrentMonthName(data.date)}</Text>
+          <Text preset="headingLarge">{getOnlyDay(data.date)}</Text>
+          <Text preset="paragraphSmall">{getOnlyHour(data.date)}</Text>
         </Box>
       </Box>
     </Box>
