@@ -1,8 +1,17 @@
-import React from 'react';
-import { Box, Button, Icon, Screen, Text, TextInput } from '@components';
+import {
+  BarberShopCard,
+  Box,
+  Button,
+  Icon,
+  Screen,
+  Text,
+  TextInput,
+} from '@components';
+import { BarberShop, Reservation, Status } from '@interfaces';
 import { getCUrrentDate, getCurrentDayName } from '@utils';
+import React from 'react';
+import { FlatList } from 'react-native';
 import { Schedules } from './components';
-import { Reservation, Status } from '@interfaces';
 
 function Header() {
   return (
@@ -11,6 +20,30 @@ function Header() {
     </Box>
   );
 }
+
+const list: BarberShop[] = [
+  {
+    id: '1',
+    name: 'Barbearia do Zé',
+    image:
+      'https://graces.com.br/wp-content/uploads/2019/02/o-que-nao-pode-faltar-na-sua-barbearia-equipamentos.jpg',
+    address: 'Avenida São Sebastião, 357, São Paulo',
+  },
+  {
+    id: '2',
+    name: 'Barbearia do Zé',
+    image:
+      'https://classic.exame.com/wp-content/uploads/2020/05/whatsapp-image-2020-05-12-at-10.47.30.jpg?quality=70&strip=info&w=1024',
+    address: 'Rua Castro Alves, 331, São Paulo',
+  },
+  {
+    id: '3',
+    name: 'Barbearia do Zé',
+    image:
+      'https://graces.com.br/wp-content/uploads/2019/02/o-que-nao-pode-faltar-na-sua-barbearia-equipamentos.jpg',
+    address: 'Rua Sete de Setembro, 428, São Paulo',
+  },
+];
 
 const data: Reservation | null = {
   status: Status['CONFIRMED'],
@@ -31,8 +64,12 @@ const data: Reservation | null = {
 
 export function HomeScreen() {
   return (
-    <Screen scrollable isHome HeaderComponent={<Header />}>
-      <Box mt="s12">
+    <Screen
+      scrollable
+      isHome
+      HeaderComponent={<Header />}
+      style={{ paddingHorizontal: 0 }}>
+      <Box mt="s12" paddingHorizontal="s16">
         <Text preset="headingMedium">
           Olá,{' '}
           <Text
@@ -50,7 +87,7 @@ export function HomeScreen() {
 
       <Box
         marginVertical="s20"
-        paddingHorizontal="none"
+        paddingHorizontal="s16"
         flexDirection="row"
         justifyContent="center"
         alignItems="center"
@@ -64,7 +101,24 @@ export function HomeScreen() {
           title=""
         />
       </Box>
-      <Schedules data={data} />
+
+      <Box paddingHorizontal="s16">
+        <Schedules data={data} />
+      </Box>
+
+      <Box marginVertical="s32" paddingLeft="s16" pt="s24">
+        <Text color="gray3">RECOMENDADOS</Text>
+
+        <FlatList
+          data={list}
+          horizontal
+          keyExtractor={item => item.id}
+          style={{ marginTop: 20 }}
+          showsHorizontalScrollIndicator={false}
+          ItemSeparatorComponent={() => <Box width={25} />}
+          renderItem={({ item }) => <BarberShopCard data={item} />}
+        />
+      </Box>
     </Screen>
   );
 }
