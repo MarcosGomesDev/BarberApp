@@ -2,18 +2,18 @@ import React from 'react';
 
 import {
   ActivityIndicator,
-  TouchableOpacityBox,
-  TouchableOpacityBoxProps,
+  Box,
+  Icon,
+  IconName,
   Text,
   TextVariants,
-  IconName,
-  Icon,
-  Box,
+  TouchableOpacityBox,
+  TouchableOpacityBoxProps,
 } from '@components';
 
 import { buttonPresets } from './buttonPresets';
 
-export type ButtonPreset = 'primary' | 'outline' | 'underline';
+export type ButtonPreset = 'primary' | 'outline' | 'underline' | 'default';
 
 export interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;

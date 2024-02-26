@@ -45,6 +45,21 @@ export const buttonPresets: Record<
       content: 'gray2',
     },
   },
+  default: {
+    default: {
+      container: {
+        backgroundColor: 'gray1',
+      },
+      content: 'white',
+    },
+    disabled: {
+      container: {
+        backgroundColor: 'gray1',
+      },
+      content: 'ice',
+    },
+  },
+
   underline: {
     default: {
       container: {},
