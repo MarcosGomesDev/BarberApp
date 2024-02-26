@@ -4,6 +4,6 @@ import { Status } from './status';
 export interface Reservation {
   status: Status;
   service: Service;
-  barbershop: BarberShop;
+  barbershop: Partial<BarberShop>;
   date: Date;
 }
