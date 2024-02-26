@@ -26,22 +26,23 @@ import { HeartFillIcon } from '../../assets/icons/HeartFillIcon';
 import { HeartIcon } from '../../assets/icons/HeartIcon';
 import { HomeFillIcon } from '../../assets/icons/HomeFillIcon';
 import { HomeIcon } from '../../assets/icons/HomeIcon';
+import { LockFillIcon } from '../../assets/icons/LockFillIcon';
 import { LogoFillIcon } from '../../assets/icons/LogoFillIcon';
 import { LogoTextIcon } from '../../assets/icons/LogoTextIcon';
+import { MenuIcon } from '../../assets/icons/MenuIcon';
 import { MessageIcon } from '../../assets/icons/MessageIcon';
 import { MessageRoundIcon } from '../../assets/icons/MessageRoundIcon';
+import { MinusIcon } from '../../assets/icons/MinusIcon';
 import { NewPostIcon } from '../../assets/icons/NewPostIcon';
+import { PlusIcon } from '../../assets/icons/PlusIcon';
 import { ProfileFillIcon } from '../../assets/icons/ProfileFillIcon';
 import { ProfileIcon } from '../../assets/icons/ProfileIcon';
 import { SearchIcon } from '../../assets/icons/SearchIcon';
 import { SettingsIcon } from '../../assets/icons/SettingsIcon';
+import { StarIcon } from '../../assets/icons/StarIcon';
 import { TrashIcon } from '../../assets/icons/TrashIcon';
-import { UserFillIcon } from '../../assets/icons/userFillIcon';
-import { LockFillIcon } from '../../assets/icons/LockFillIcon';
 import { WarningIcon } from '../../assets/icons/WarningIcon';
-import { PlusIcon } from '../../assets/icons/PlusIcon';
-import { MinusIcon } from '../../assets/icons/MinusIcon';
-import { MenuIcon } from '../../assets/icons/MenuIcon';
+import { UserFillIcon } from '../../assets/icons/userFillIcon';
 export interface IconBase {
   size?: number;
   color?: string;
@@ -112,6 +113,7 @@ const iconRegistry = {
   warning: WarningIcon,
   plus: PlusIcon,
   minus: MinusIcon,
+  star: StarIcon,
 };
 
 type IconType = typeof iconRegistry;

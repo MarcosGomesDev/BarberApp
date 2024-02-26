@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Path, Svg } from 'react-native-svg';
 
-import { IconBase } from '../../components/Icon/Icon';
+import { IconBase } from '@components';
 
 export function WarningIcon({ size = 20, color = 'white' }: IconBase) {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Path, Svg } from 'react-native-svg';
 
-import { IconBase } from '../../components/Icon/Icon';
+import { IconBase } from '@components';
 
 export function UserFillIcon({ size = 20, color = 'black' }: IconBase) {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Svg, Path } from 'react-native-svg';
+import { Path, Svg } from 'react-native-svg';
 
-import { IconBase } from '../../components/Icon/Icon';
+import { IconBase } from '@components';
 
 export function PlusIcon({ size = 20, color = 'black' }: IconBase) {
   return (
