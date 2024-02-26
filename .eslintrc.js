@@ -5,5 +5,6 @@ module.exports = {
     'react-native/no-inline-styles': 'off',
     'react/react-in-jsx-scope': 'off',
     'dot-notation': 'off',
+    'react/no-unstable-nested-components': 'off',
   },
 };
