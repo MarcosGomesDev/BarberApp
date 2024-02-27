@@ -1,17 +1,7 @@
-import {
-  BarberShopCard,
-  Box,
-  Button,
-  Icon,
-  Screen,
-  Text,
-  TextInput,
-} from '@components';
+import { Box, Icon, Screen } from '@components';
 import { BarberShop, Reservation, Status } from '@interfaces';
-import { getCUrrentDate, getCurrentDayName } from '@utils';
 import React from 'react';
-import { FlatList } from 'react-native';
-import { Schedules } from './components';
+import { BarberOptions, Schedules, SearchBar, WelcomeUser } from './components';
 
 function Header() {
   return (
@@ -69,56 +59,13 @@ export function HomeScreen() {
       isHome
       HeaderComponent={<Header />}
       style={{ paddingHorizontal: 0 }}>
-      <Box mt="s12" paddingHorizontal="s16">
-        <Text preset="headingMedium">
-          Olá,{' '}
-          <Text
-            preset="headingMedium"
-            bold
-            fontWeight="bold"
-            style={{ fontFamily: 'Nunito' }}>
-            Miguel!
-          </Text>
-        </Text>
-        <Text mt="s14">
-          {getCurrentDayName()}, {getCUrrentDate()}
-        </Text>
-      </Box>
+      <WelcomeUser />
 
-      <Box
-        marginVertical="s20"
-        paddingHorizontal="s16"
-        flexDirection="row"
-        justifyContent="center"
-        alignItems="center"
-        alignContent="center">
-        <TextInput placeholder="Buscar Barbearias" />
-        <Button
-          ml="s10"
-          paddingHorizontal="s14"
-          icon
-          iconName="search"
-          title=""
-        />
-      </Box>
+      <SearchBar />
 
-      <Box paddingHorizontal="s16">
-        <Schedules data={data} />
-      </Box>
+      <Schedules data={data} />
 
-      <Box marginVertical="s32" paddingLeft="s16" pt="s24">
-        <Text color="gray3">RECOMENDADOS</Text>
-
-        <FlatList
-          data={list}
-          horizontal
-          keyExtractor={item => item.id}
-          style={{ marginTop: 20 }}
-          showsHorizontalScrollIndicator={false}
-          ItemSeparatorComponent={() => <Box width={25} />}
-          renderItem={({ item }) => <BarberShopCard data={item} />}
-        />
-      </Box>
+      <BarberOptions data={list} />
     </Screen>
   );
 }
