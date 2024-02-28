@@ -1,9 +1,7 @@
+import { Box, ScheduleCard, Text } from '@components';
 import { Reservation } from '@interfaces';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import { Box } from '../../../../../components/Box';
-import { ScheduleCard } from '../../../../../components/ScheduleCard';
-import { Text } from '../../../../../components/Text';
 
 interface SchedulesProps {
   data: Reservation | null;
