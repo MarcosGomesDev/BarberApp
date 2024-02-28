@@ -1,7 +1,6 @@
 import { BarberShop } from '@interfaces';
 import React from 'react';
-import { Dimensions, Image } from 'react-native';
-import Place from '../../assets/images/lugar-1.jpg';
+import { Dimensions, Image, ViewStyle } from 'react-native';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
@@ -9,11 +8,12 @@ import { Text } from '../Text';
 
 interface BarberShopCardProps {
   data: BarberShop;
+  style?: ViewStyle;
 }
 
-const widthCard = Dimensions.get('window').width / 2.2;
+const widthCard = Dimensions.get('window').width / 2.49;
 
-export function BarberShopCard({ data }: BarberShopCardProps) {
+export function BarberShopCard({ data, style }: BarberShopCardProps) {
   return (
     <Box
       backgroundColor="gray2"
@@ -26,6 +26,7 @@ export function BarberShopCard({ data }: BarberShopCardProps) {
       alignContent="space-between"
       padding="s4"
       pb="s10"
+      style={style}
       borderColor="gray1">
       <Box>
         <Box
@@ -47,7 +48,7 @@ export function BarberShopCard({ data }: BarberShopCardProps) {
           </Text>
         </Box>
         <Image
-          source={data.image ? { uri: data.image } : Place}
+          source={{ uri: data.image }}
           borderRadius={18}
           style={{
             backgroundColor: 'transparent',
