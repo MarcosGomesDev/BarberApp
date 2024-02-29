@@ -57,6 +57,7 @@ export function HomeScreen() {
     <Screen
       scrollable
       isHome
+      hasHeader
       HeaderComponent={<Header />}
       style={{ paddingHorizontal: 0 }}>
       <WelcomeUser />
