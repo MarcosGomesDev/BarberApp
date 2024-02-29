@@ -24,10 +24,11 @@ export function Text({
   ...sRTextProps
 }: TextProps) {
   const fontFamily = getFontFamily(preset, bold, italic, semiBold);
+  const fontWeight = bold ? 'bold' : semiBold ? '600' : 'normal';
   return (
     <SRText
       color="white"
-      style={[$fontSizes[preset], { fontFamily }, style]}
+      style={[$fontSizes[preset], { fontFamily, fontWeight }, style]}
       {...sRTextProps}>
       {children}
     </SRText>
