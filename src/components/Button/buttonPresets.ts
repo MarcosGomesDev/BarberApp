@@ -33,9 +33,9 @@ export const buttonPresets: Record<
     default: {
       container: {
         borderWidth: 1,
-        borderColor: 'buttonPrimary',
+        borderColor: 'gray1',
       },
-      content: 'buttonPrimary',
+      content: 'white',
     },
     disabled: {
       container: {
