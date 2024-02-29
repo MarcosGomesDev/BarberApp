@@ -8,6 +8,9 @@ export interface BarberShop {
 export interface Service {
   id: string;
   name: string;
+  description?: string;
   price: number;
   image: string;
+  rating?: number;
+  totalRatings?: number;
 }
