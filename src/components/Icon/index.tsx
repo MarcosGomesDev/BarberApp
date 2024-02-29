@@ -34,6 +34,7 @@ import { MessageIcon } from '../../assets/icons/MessageIcon';
 import { MessageRoundIcon } from '../../assets/icons/MessageRoundIcon';
 import { MinusIcon } from '../../assets/icons/MinusIcon';
 import { NewPostIcon } from '../../assets/icons/NewPostIcon';
+import { PinMapIcon } from '../../assets/icons/PinMapIcon';
 import { PlusIcon } from '../../assets/icons/PlusIcon';
 import { ProfileFillIcon } from '../../assets/icons/ProfileFillIcon';
 import { ProfileIcon } from '../../assets/icons/ProfileIcon';
@@ -114,6 +115,7 @@ const iconRegistry = {
   plus: PlusIcon,
   minus: MinusIcon,
   star: StarIcon,
+  pinMap: PinMapIcon,
 };
 
 type IconType = typeof iconRegistry;
