@@ -31,7 +31,7 @@ export function Screen({
   canGoBack = false,
   isHome = false,
   statusBarTranslucent = false,
-  scrollPointShowBackgroundStatusBar = 100,
+  scrollPointShowBackgroundStatusBar = 1,
   hasHeader = false,
   scrollable = true,
   style,
