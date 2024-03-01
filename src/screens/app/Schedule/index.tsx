@@ -35,9 +35,18 @@ export function ScheduleScreen() {
       scrollable
       style={{ paddingHorizontal: 0, paddingTop: 0 }}
       scrollEventThrottle={16}
-      scrollPointShowBackgroundStatusBar={Dimensions.get('window').height / 9}
       statusBarTranslucent>
-      <Box>
+      <Box position="relative">
+        <Box position="absolute" zIndex={20} mt="s40" ml="s20">
+          <Button
+            icon
+            iconName="arrowLeft"
+            title=""
+            preset="default"
+            height={40}
+            width={45}
+          />
+        </Box>
         <Image
           source={{
             uri: data.barberShop.image,
@@ -70,7 +79,6 @@ export function ScheduleScreen() {
           </Text>
         </Box>
       </Box>
-
       <Box paddingHorizontal="s16" pt="s32">
         <Box flexDirection="row" alignItems="center" gap="s12" pb="s20">
           <Button title="Serviços" height={45} />
