@@ -40,6 +40,7 @@ import { ProfileFillIcon } from '../../assets/icons/ProfileFillIcon';
 import { ProfileIcon } from '../../assets/icons/ProfileIcon';
 import { SearchIcon } from '../../assets/icons/SearchIcon';
 import { SettingsIcon } from '../../assets/icons/SettingsIcon';
+import { SmartphoneIcon } from '../../assets/icons/SmartphoneIcon';
 import { StarIcon } from '../../assets/icons/StarIcon';
 import { TrashIcon } from '../../assets/icons/TrashIcon';
 import { WarningIcon } from '../../assets/icons/WarningIcon';
@@ -116,6 +117,7 @@ const iconRegistry = {
   minus: MinusIcon,
   star: StarIcon,
   pinMap: PinMapIcon,
+  smartphone: SmartphoneIcon,
 };
 
 type IconType = typeof iconRegistry;
