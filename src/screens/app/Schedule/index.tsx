@@ -1,4 +1,5 @@
 import {
+  BarberShopInfoCard,
   Box,
   Button,
   Icon,
@@ -6,8 +7,10 @@ import {
   Screen,
   Text,
 } from '@components';
-import React from 'react';
+import React, { useState } from 'react';
 import { Dimensions, Image } from 'react-native';
+import barbershopinfo from './barbershopinfo.json';
+import servicesData from './services.json';
 
 const data = {
   barberShop: {
@@ -19,17 +22,23 @@ const data = {
     rating: 4.5,
     totalRatings: 100,
   },
-  service: {
-    id: '1',
-    name: 'Corte de Cabelo',
-    description: 'Corte de cabelo masculino com tesoura e máquina.',
-    image:
-      'https://i.pinimg.com/736x/23/7f/21/237f21c6d6356656be665050eaa183da.jpg',
-    price: 30,
-  },
+  services: servicesData,
 };
 
+enum MenuType {
+  Service = 'Service',
+  Information = 'Information',
+}
+
+type MenuTypes = keyof typeof MenuType;
+
 export function ScheduleScreen() {
+  const [changeMenu, setChangeMenu] = useState<MenuTypes>('Service');
+
+  function handleMenuChange(menu: MenuTypes) {
+    setChangeMenu(menu);
+  }
+
   return (
     <Screen
       scrollable
@@ -37,7 +46,16 @@ export function ScheduleScreen() {
       scrollEventThrottle={16}
       statusBarTranslucent>
       <Box position="relative">
-        <Box position="absolute" zIndex={20} mt="s40" ml="s20">
+        <Box
+          position="absolute"
+          zIndex={20}
+          mt="s40"
+          ml="s20"
+          shadowOffset={{ width: 0, height: 9 }}
+          shadowOpacity={0.22}
+          shadowRadius={10.24}
+          elevation={13}
+          shadowColor="white">
           <Button
             icon
             iconName="arrowLeft"
@@ -79,15 +97,31 @@ export function ScheduleScreen() {
           </Text>
         </Box>
       </Box>
-      <Box paddingHorizontal="s16" pt="s32">
+      <Box paddingHorizontal="s16" pt="s28">
         <Box flexDirection="row" alignItems="center" gap="s12" pb="s20">
-          <Button title="Serviços" height={45} />
-          <Button title="Informações" preset="outline" height={45} />
+          <Button
+            title="Serviços"
+            height={45}
+            onPress={() => handleMenuChange('Service')}
+            preset={changeMenu === 'Service' ? 'primary' : 'default'}
+          />
+          <Button
+            title="Informações"
+            preset={changeMenu === 'Information' ? 'primary' : 'default'}
+            height={45}
+            onPress={() => handleMenuChange('Information')}
+          />
         </Box>
-        <MenuServiceItemCard data={data.service} />
       </Box>
-
-      <Box height={900} />
+      {changeMenu === 'Service' ? (
+        <Box paddingHorizontal="s16">
+          {data.services.map((service, index) => (
+            <MenuServiceItemCard key={index} data={service} />
+          ))}
+        </Box>
+      ) : (
+        <BarberShopInfoCard data={barbershopinfo} />
+      )}
     </Screen>
   );
 }
