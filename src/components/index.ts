@@ -1,5 +1,6 @@
 export * from './ActivityIndicator';
 export * from './BarberShopCard';
+export * from './BarberShopInfoCard';
 export * from './Box';
 export * from './Button';
 export * from './Form';
