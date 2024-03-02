@@ -20,6 +20,7 @@ export function MenuServiceItemCard({ data }: MenuServiceItemCardProps) {
       backgroundColor="gray2"
       paddingHorizontal="s10"
       gap="s12"
+      mb="s14"
       paddingVertical="s4">
       <Box>
         <Image
@@ -48,7 +49,11 @@ export function MenuServiceItemCard({ data }: MenuServiceItemCardProps) {
             ? data.description
             : 'Serviço de Qualidade'}
         </Text>
-        <Box flexDirection="row" gap="s14" alignItems="center">
+        <Box
+          flexDirection="row"
+          gap="s14"
+          alignItems="center"
+          justifyContent="space-between">
           <Text color="purple" bold>
             {data.price.toLocaleString('pt-BR', {
               style: 'currency',
