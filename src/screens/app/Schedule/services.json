@@ -1,0 +1,93 @@
+[
+  {
+    "id": "1",
+    "name": "Corte de Cabelo",
+    "description": "Corte moderno e estilizado",
+    "price": 30.0,
+    "image": "https://img.freepik.com/fotos-premium/barbeiro-cortando-cabelo-com-tesoura-para-um-jovem-bonito-fotografia-de-alta-qualidade_56854-4504.jpg",
+    "rating": 4.5,
+    "totalRatings": 100
+  },
+  {
+    "id": "2",
+    "name": "Barba Tradicional",
+    "description": "Barba feita com navalha",
+    "price": 20.0,
+    "image": "https://static.wixstatic.com/media/750788_7badff1efb0f4f7a928b03dccdd13f5e~mv2.jpg/v1/fill/w_640,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/750788_7badff1efb0f4f7a928b03dccdd13f5e~mv2.jpg",
+    "rating": 4.0,
+    "totalRatings": 80
+  },
+  {
+    "id": "3",
+    "name": "Pacote Combo (Corte + Barba)",
+    "price": 45.0,
+    "image": "https://st4.depositphotos.com/1001951/23164/i/450/depositphotos_231646636-stock-photo-clients-in-barbershop.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Tratamento Capilar",
+    "description": "Tratamento para fortalecimento capilar",
+    "price": 25.0,
+    "image": "https://seuelias.com/v2018/wp-content/uploads/2022/02/hidratacao-capilar-masculina.jpg",
+    "rating": 4.2,
+    "totalRatings": 90
+  },
+  {
+    "id": "5",
+    "name": "Corte de Cabelo Premium",
+    "description": "Corte de alta qualidade com produtos premium",
+    "price": 40.0,
+    "image": "https://img.freepik.com/fotos-premium/corte-de-cabelo-masculino-cabeleireiro-barbearia-corte-de-cabelo-profissional_627545-304.jpg",
+    "rating": 4.8,
+    "totalRatings": 120
+  },
+  {
+    "id": "6",
+    "name": "Barba Estilizada",
+    "description": "Barba com designs estilizados",
+    "price": 25.0,
+    "image": "https://modapontonet.com.br/wp-content/uploads/2024/02/barba-degrade.webp",
+    "rating": 4.3,
+    "totalRatings": 95
+  },
+  {
+    "id": "7",
+    "name": "Corte e Coloração",
+    "description": "Corte de cabelo com opção de coloração",
+    "price": 50.0,
+    "image": "https://blog.alfalooksstore.com.br/wp-content/uploads/2021/06/platinado-masculino-video-aula.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Pacote Relaxante (Massagem + Barba)",
+    "price": 55.0,
+    "image": "https://static.wixstatic.com/media/4a137f_ec19a2021e6743529e171528af1d3603~mv2.jpg/v1/fill/w_1000,h_741,al_c,q_85,usm_0.66_1.00_0.01/4a137f_ec19a2021e6743529e171528af1d3603~mv2.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Tratamento Capilar de Luxo",
+    "description": "Tratamento capilar de luxo com produtos exclusivos",
+    "price": 60.0,
+    "image": "https://negociosdebeleza.beautyfair.com.br/wp-content/uploads/2019/10/Como-iniciar-na-carreira-de-maquiadora-23.png",
+    "rating": 4.9,
+    "totalRatings": 150
+  },
+  {
+    "id": "10",
+    "name": "Design de Barba",
+    "description": "Serviço de design para barbas estilizadas",
+    "price": 30.0,
+    "image": "https://solutudo-cdn.s3-sa-east-1.amazonaws.com/prod/adv_files/5966326b-9ea0-4979-8961-46aeac1f1cfe/61391505-eb14-4490-b253-7f6bac1e09ff.jpg",
+    "rating": 4.5,
+    "totalRatings": 110
+  },
+  {
+    "id": "13",
+    "name": "Corte de Cabelo Infantil",
+    "description": "Corte especial para crianças",
+    "price": 20.0,
+    "image": "https://vipzinho.com.br/wp-content/uploads/2019/01/sparta-barber-shop-criancas4.jpg",
+    "rating": 4.7,
+    "totalRatings": 70
+  }
+]

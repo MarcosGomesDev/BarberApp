@@ -1,0 +1,48 @@
+{
+  "about": "Bem-vindo à Vintage Barber, onde tradição encontra estilo. Nossa equipe de mestres barbeiros transforma cortes de cabelo e barbas em obras de arte. Em um ambiente acolhedor, promovemos confiança, estilo e uma comunidade unida.",
+  "phones": ["11982045108", "13992151595"],
+  "schedule": [
+    {
+      "close": "",
+      "open": "",
+      "dayName": "Segunda",
+      "isClosed": true
+    },
+    {
+      "close": "18:00",
+      "open": "09:00",
+      "dayName": "Terça",
+      "isClosed": false
+    },
+    {
+      "close": "18:00",
+      "open": "09:00",
+      "dayName": "Quarta",
+      "isClosed": false
+    },
+    {
+      "close": "18:00",
+      "open": "09:00",
+      "dayName": "Quinta",
+      "isClosed": false
+    },
+    {
+      "close": "18:00",
+      "open": "09:00",
+      "dayName": "Sexta",
+      "isClosed": false
+    },
+    {
+      "close": "18:00",
+      "open": "09:00",
+      "dayName": "Sábado",
+      "isClosed": false
+    },
+    {
+      "close": "",
+      "open": "",
+      "dayName": "Domingo",
+      "isClosed": true
+    }
+  ]
+}
